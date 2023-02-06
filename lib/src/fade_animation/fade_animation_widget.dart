@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animation_transition/simple_animation_transition.dart';
 
-
 class FadeAnimatedWidget extends StatefulWidget {
-/// Wrap widget to get a faded effect.
+  /// Wrap widget to get a faded effect.
   /// [fadeType] by default is [FadeType.fadeIn] (as defined in [AnimationConstants]).
   /// [duration] by default is 1500 milliseconds.
   /// [curve] by default is [Curves.fastOutSlowIn].
@@ -24,7 +23,8 @@ class FadeAnimatedWidget extends StatefulWidget {
   State<FadeAnimatedWidget> createState() => _FadeAnimatedWidgetState();
 }
 
-class _FadeAnimatedWidgetState extends State<FadeAnimatedWidget> with TickerProviderStateMixin {
+class _FadeAnimatedWidgetState extends State<FadeAnimatedWidget>
+    with TickerProviderStateMixin {
   late final AnimationController _fadeController;
   late final Animation<double> _fadeAnimation;
 

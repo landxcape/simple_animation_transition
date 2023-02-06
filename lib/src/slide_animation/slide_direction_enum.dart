@@ -5,6 +5,7 @@ enum SlideDirectionType {
   fromRight,
   fromTop,
   fromBottom,
+
   /// slide start form supplied [heightFrom] and [widthFrom] in [getBegin]
   fromPosition,
 }

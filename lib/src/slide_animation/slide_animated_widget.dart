@@ -18,7 +18,8 @@ class SlideAnimatedWidget extends StatefulWidget {
     this.widthFrom,
     required this.child,
   }) : assert(
-          direction != SlideDirectionType.fromPosition || (heightFrom != null && widthFrom != null),
+          direction != SlideDirectionType.fromPosition ||
+              (heightFrom != null && widthFrom != null),
           "heightFrom and widthFrom should be not null when direction is $direction",
         );
 
@@ -33,7 +34,8 @@ class SlideAnimatedWidget extends StatefulWidget {
   State<SlideAnimatedWidget> createState() => _SlideAnimatedWidgetState();
 }
 
-class _SlideAnimatedWidgetState extends State<SlideAnimatedWidget> with TickerProviderStateMixin {
+class _SlideAnimatedWidgetState extends State<SlideAnimatedWidget>
+    with TickerProviderStateMixin {
   late final AnimationController _slideController;
   late final Animation<Offset> _slideAnimation;
 

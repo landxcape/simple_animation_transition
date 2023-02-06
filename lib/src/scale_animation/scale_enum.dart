@@ -1,6 +1,7 @@
 enum ScaleType {
   /// from 50% size to 100%
   scaleIn,
+
   /// from 150% size to 100%
   scaleOut,
 }

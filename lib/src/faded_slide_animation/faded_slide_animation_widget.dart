@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animation_transition/simple_animation_transition.dart';
 
-
 class FadedSlideAnimationWidget extends StatelessWidget {
   const FadedSlideAnimationWidget({
     Key? key,

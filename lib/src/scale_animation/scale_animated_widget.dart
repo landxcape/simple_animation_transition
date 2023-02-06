@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animation_transition/simple_animation_transition.dart';
 
-
 class ScaleAnimatedWidget extends StatefulWidget {
   /// Wrap widget to get a scaling effect.
   /// [initialScaleRatio] is the initial size of the widget (pass value between 0 to 1).
@@ -31,7 +30,8 @@ class ScaleAnimatedWidget extends StatefulWidget {
   State<ScaleAnimatedWidget> createState() => _ScaleAnimatedWidgetState();
 }
 
-class _ScaleAnimatedWidgetState extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
+class _ScaleAnimatedWidgetState extends State<ScaleAnimatedWidget>
+    with TickerProviderStateMixin {
   late final AnimationController _scaleController;
   late final Animation<double> _scaleAnimation;
 

@@ -37,14 +37,15 @@ class SimpleAnimationsPreview extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () => Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => const SimpleAnimationsPreview()),
+              MaterialPageRoute(
+                  builder: (_) => const SimpleAnimationsPreview()),
             ),
             icon: const Icon(Icons.replay_outlined),
           ),
         ],
       ),
       body: SizedBox(
-      width: double.infinity,
+        width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

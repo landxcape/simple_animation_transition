@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3
+
+Add dartdoc comments
+
 ## 0.0.2
 
 Added offset to slide animation widget
