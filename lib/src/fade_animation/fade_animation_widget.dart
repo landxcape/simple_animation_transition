@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:simple_animation_transition/simple_animation_transition.dart';
 
-import '../animation_constants.dart';
-import 'fade_enum.dart';
 
 class FadeAnimatedWidget extends StatefulWidget {
   const FadeAnimatedWidget({
