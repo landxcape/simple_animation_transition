@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:simple_animation_transition/simple_animation_transition.dart';
 
 class FadedSlideAnimationWidget extends StatelessWidget {
+  /// mix of [FadeAnimatedWidget] and [SlideAnimatedWidget]
   const FadedSlideAnimationWidget({
     Key? key,
     this.duration = AnimationConstants.defaultDuration,

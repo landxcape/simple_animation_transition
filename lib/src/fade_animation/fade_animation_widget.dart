@@ -3,6 +3,7 @@ import 'package:simple_animation_transition/simple_animation_transition.dart';
 
 class FadeAnimatedWidget extends StatefulWidget {
   /// Wrap widget to get a faded effect.
+  ///
   /// [fadeType] by default is [FadeType.fadeIn] (as defined in [AnimationConstants]).
   /// [duration] by default is 1500 milliseconds.
   /// [curve] by default is [Curves.fastOutSlowIn].

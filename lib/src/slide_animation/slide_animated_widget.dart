@@ -3,6 +3,7 @@ import 'package:simple_animation_transition/simple_animation_transition.dart';
 
 class SlideAnimatedWidget extends StatefulWidget {
   /// Wrap widget to get a sliding effect.
+  ///
   /// [direction] by default is [SlideDirectionType.fromLeft] (as defined in [AnimationConstants]).
   /// [duration] by default is 1 second.
   /// [curve] by default is [Curves.fastOutSlowIn].

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4
+
+Add more dartdoc comments
+
 ## 0.0.3
 
 Add dartdoc comments

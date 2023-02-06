@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:simple_animation_transition/simple_animation_transition.dart';
 
 class FadedScaleAnimationWidget extends StatelessWidget {
+  /// mix of [FadeAnimatedWidget] and [ScaleAnimatedWidget]
   const FadedScaleAnimationWidget({
     Key? key,
     this.duration = AnimationConstants.defaultDuration,
