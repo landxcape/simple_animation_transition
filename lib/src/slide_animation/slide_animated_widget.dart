@@ -7,29 +7,26 @@ class SlideAnimatedWidget extends StatefulWidget {
   /// [direction] by default is [SlideDirectionType.fromLeft] (as defined in [AnimationConstants]).
   /// [duration] by default is 1 second.
   /// [curve] by default is [Curves.fastOutSlowIn].
-  /// [heightFrom] to supply starting height
-  /// [widthFrom] to supply starting width
-  /// when [direction] is of type [SlideDirectionType.fromPosition], both [heightFrom] and [widthFrom] must be supplied
+  /// [offset] is the starting position of the slide when [direction] is [SlideDirectionType.fromOffset]
+  /// else, default offset value [AnimationConstants.defaultSlideOffsetValue] is used
+  /// when [direction] is of type [SlideDirectionType.fromOffset], [offset] must be supplied
   const SlideAnimatedWidget({
     super.key,
-    this.direction = AnimationConstants.defaultSlide,
+    this.direction = SlideDirectionType.fromLeft,
     this.duration = const Duration(seconds: 1),
     this.curve = Curves.fastOutSlowIn,
-    this.heightFrom,
-    this.widthFrom,
+    this.offset,
     required this.child,
   }) : assert(
-          direction != SlideDirectionType.fromPosition ||
-              (heightFrom != null && widthFrom != null),
-          "heightFrom and widthFrom should be not null when direction is $direction",
+          direction != SlideDirectionType.fromOffset || (offset != null),
+          "offset should be not null when direction is $direction",
         );
 
   final SlideDirectionType direction;
   final Duration duration;
   final Curve curve;
+  final Offset? offset;
   final Widget child;
-  final double? heightFrom;
-  final double? widthFrom;
 
   @override
   State<SlideAnimatedWidget> createState() => _SlideAnimatedWidgetState();
@@ -49,10 +46,7 @@ class _SlideAnimatedWidgetState extends State<SlideAnimatedWidget>
       vsync: this,
     );
     _slideAnimation = Tween<Offset>(
-      begin: widget.direction.getBegin(
-        widget.heightFrom ?? AnimationConstants.defaultSlideHeight,
-        widget.widthFrom ?? AnimationConstants.defaultSlideWidth,
-      ),
+      begin: widget.direction.getBegin(widget.offset),
       end: widget.direction.getEnd(),
     ).animate(
       CurvedAnimation(
@@ -67,7 +61,6 @@ class _SlideAnimatedWidgetState extends State<SlideAnimatedWidget>
   @override
   void dispose() {
     _slideController.reverse();
-
     _slideController.dispose();
 
     super.dispose();

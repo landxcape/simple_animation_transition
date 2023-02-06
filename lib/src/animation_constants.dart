@@ -9,6 +9,5 @@ class AnimationConstants {
   static const defaultFade = FadeType.fadeIn;
   static const defaultScale = ScaleType.scaleIn;
   static const defaultSlide = SlideDirectionType.fromLeft;
-  static const defaultSlideHeight = 20.0;
-  static const defaultSlideWidth = 20.0;
+  static const defaultSlideOffsetValue = 25.0;
 }

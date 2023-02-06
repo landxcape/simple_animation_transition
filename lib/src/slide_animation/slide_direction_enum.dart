@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:simple_animation_transition/src/animation_constants.dart';
 
 enum SlideDirectionType {
   fromLeft,
   fromRight,
   fromTop,
   fromBottom,
-
-  /// slide start form supplied [heightFrom] and [widthFrom] in [getBegin]
-  fromPosition,
+  fromOffset,
 }
 
 extension DirectionTypeExtension on SlideDirectionType {
   /// values for start of the tween
-  Offset getBegin(double heightFrom, double widhtFrom) {
+  Offset getBegin(Offset? offset) {
+    const offsetVal = AnimationConstants.defaultSlideOffsetValue;
     switch (this) {
       case SlideDirectionType.fromLeft:
-        return Offset(-widhtFrom, 0);
+        return const Offset(-offsetVal, 0);
       case SlideDirectionType.fromRight:
-        return Offset(widhtFrom, 0);
+        return const Offset(offsetVal, 0);
       case SlideDirectionType.fromTop:
-        return Offset(0, -heightFrom);
+        return const Offset(0, -offsetVal);
       case SlideDirectionType.fromBottom:
-        return Offset(0, heightFrom);
-      case SlideDirectionType.fromPosition:
-        return Offset(widhtFrom, heightFrom);
+        return const Offset(0, offsetVal);
+      case SlideDirectionType.fromOffset:
+      default:
+        return offset ?? const Offset(0, 0);
     }
   }
 
@@ -34,7 +35,7 @@ extension DirectionTypeExtension on SlideDirectionType {
       case SlideDirectionType.fromRight:
       case SlideDirectionType.fromTop:
       case SlideDirectionType.fromBottom:
-      case SlideDirectionType.fromPosition:
+      case SlideDirectionType.fromOffset:
       default:
         return const Offset(0, 0);
     }
