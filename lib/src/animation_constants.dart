@@ -1,8 +1,6 @@
 import 'package:flutter/animation.dart';
 
-import 'fade_animation/fade_enum.dart';
-import 'scale_animation/scale_enum.dart';
-import 'slide_animation/slide_direction_enum.dart';
+import 'package:simple_animation_transition/simple_animation_transition.dart';
 
 class AnimationConstants {
   static const defaultDuration = Duration(milliseconds: 1500);
