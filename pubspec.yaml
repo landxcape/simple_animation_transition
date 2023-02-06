@@ -1,7 +1,7 @@
 name: simple_animation_transition
-description: A new Flutter package project.
+description: Simple animations for widgets. You can just wrap any widget with it and expect it to transition on build to its position.
 version: 0.0.1
-# homepage:
+homepage: https://github.com/landxcape/simple_animation_transition
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
