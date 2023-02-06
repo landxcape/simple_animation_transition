@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:simple_animation_transition/simple_animation_transition.dart';
 
-import '../animation_constants.dart';
-import 'scale_enum.dart';
 
 class ScaleAnimatedWidget extends StatefulWidget {
   const ScaleAnimatedWidget({
@@ -23,8 +22,7 @@ class ScaleAnimatedWidget extends StatefulWidget {
   State<ScaleAnimatedWidget> createState() => _ScaleAnimatedWidgetState();
 }
 
-class _ScaleAnimatedWidgetState extends State<ScaleAnimatedWidget>
-    with TickerProviderStateMixin {
+class _ScaleAnimatedWidgetState extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
   late final AnimationController _scaleController;
   late final Animation<double> _scaleAnimation;
 
