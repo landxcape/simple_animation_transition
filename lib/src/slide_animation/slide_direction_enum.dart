@@ -5,24 +5,22 @@ enum SlideDirectionType {
   fromRight,
   fromTop,
   fromBottom,
-  fromOffset,
+  fromPosition,
 }
 
 extension DirectionTypeExtension on SlideDirectionType {
-  Offset getBegin(Offset? offset) {
-    const offsetVal = 25.0;
+  Offset getBegin(double heightFrom, double widhtFrom) {
     switch (this) {
       case SlideDirectionType.fromLeft:
-        return const Offset(-offsetVal, 0);
+        return Offset(-widhtFrom, 0);
       case SlideDirectionType.fromRight:
-        return const Offset(offsetVal, 0);
+        return Offset(widhtFrom, 0);
       case SlideDirectionType.fromTop:
-        return const Offset(0, -offsetVal);
+        return Offset(0, -heightFrom);
       case SlideDirectionType.fromBottom:
-        return const Offset(0, offsetVal);
-      case SlideDirectionType.fromOffset:
-      default:
-        return offset ?? const Offset(0, 0);
+        return Offset(0, heightFrom);
+      case SlideDirectionType.fromPosition:
+        return Offset(widhtFrom, heightFrom);
     }
   }
 
@@ -32,7 +30,7 @@ extension DirectionTypeExtension on SlideDirectionType {
       case SlideDirectionType.fromRight:
       case SlideDirectionType.fromTop:
       case SlideDirectionType.fromBottom:
-      case SlideDirectionType.fromOffset:
+      case SlideDirectionType.fromPosition:
       default:
         return const Offset(0, 0);
     }
