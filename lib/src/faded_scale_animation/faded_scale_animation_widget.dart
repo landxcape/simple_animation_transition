@@ -1,11 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:simple_animation_transition/simple_animation_transition.dart';
 
-import '../animation_constants.dart';
-import '../fade_animation/fade_animation_widget.dart';
-import '../fade_animation/fade_enum.dart';
-import '../scale_animation/scale_animated_widget.dart';
-import '../scale_animation/scale_enum.dart';
 
 class FadedScaleAnimationWidget extends StatelessWidget {
   const FadedScaleAnimationWidget({
