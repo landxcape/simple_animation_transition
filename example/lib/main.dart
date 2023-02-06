@@ -13,9 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
       theme: ThemeData(useMaterial3: true),
       home: const SimpleAnimationsPreview(),
     );
@@ -61,7 +58,7 @@ class SimpleAnimationsPreview extends StatelessWidget {
                   child: Text(
                     'Fade Animation',
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ),
@@ -78,7 +75,7 @@ class SimpleAnimationsPreview extends StatelessWidget {
                   child: Text(
                     'Slide Animation',
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ),
@@ -95,7 +92,7 @@ class SimpleAnimationsPreview extends StatelessWidget {
                   child: Text(
                     'Scale Animation',
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ),
@@ -112,7 +109,7 @@ class SimpleAnimationsPreview extends StatelessWidget {
                   child: Text(
                     'Faded Slide Animation',
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ),
@@ -129,7 +126,7 @@ class SimpleAnimationsPreview extends StatelessWidget {
                   child: Text(
                     'Faded Scale Animation',
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ),

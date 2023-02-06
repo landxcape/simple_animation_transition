@@ -10,8 +10,7 @@ class FadedSlideAnimationWidget extends StatelessWidget {
     this.fadeType = AnimationConstants.defaultFade,
     this.direction = AnimationConstants.defaultSlide,
     this.curve = AnimationConstants.defaultCurve,
-    this.heightFrom,
-    this.widthFrom,
+    this.offset,
     this.fadeCurve,
     this.slideCurve,
     required this.child,
@@ -20,8 +19,7 @@ class FadedSlideAnimationWidget extends StatelessWidget {
   final Widget child;
   final Duration duration;
   final FadeType fadeType;
-  final double? heightFrom;
-  final double? widthFrom;
+  final Offset? offset;
   final SlideDirectionType direction;
   final Curve curve;
   final Curve? fadeCurve;
@@ -37,8 +35,7 @@ class FadedSlideAnimationWidget extends StatelessWidget {
         duration: duration,
         direction: direction,
         curve: slideCurve ?? curve,
-        heightFrom: heightFrom,
-        widthFrom: widthFrom,
+        offset: offset,
         child: child,
       ),
     );
