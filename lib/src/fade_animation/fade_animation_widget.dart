@@ -3,6 +3,10 @@ import 'package:simple_animation_transition/simple_animation_transition.dart';
 
 
 class FadeAnimatedWidget extends StatefulWidget {
+/// Wrap widget to get a faded effect.
+  /// [fadeType] by default is [FadeType.fadeIn] (as defined in [AnimationConstants]).
+  /// [duration] by default is 1500 milliseconds.
+  /// [curve] by default is [Curves.fastOutSlowIn].
   const FadeAnimatedWidget({
     super.key,
     this.fadeType = AnimationConstants.defaultFade,
@@ -33,8 +37,8 @@ class _FadeAnimatedWidgetState extends State<FadeAnimatedWidget> with TickerProv
       vsync: this,
     );
     _fadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1,
+      begin: widget.fadeType.getBegin(),
+      end: widget.fadeType.getEnd(),
     ).animate(CurvedAnimation(parent: _fadeController, curve: widget.curve));
 
     _fadeController.forward();

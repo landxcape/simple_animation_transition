@@ -1,9 +1,12 @@
 enum FadeType {
+  /// from 0% opacity to 100%
   fadeIn,
+  /// from 100% opacity to 0%
   fadeOut,
 }
 
 extension FadeTypeExtension on FadeType {
+  /// values for start of the tween
   double getBegin() {
     switch (this) {
       case FadeType.fadeIn:
@@ -13,6 +16,7 @@ extension FadeTypeExtension on FadeType {
     }
   }
 
+  /// values for end of the tween
   double getEnd() {
     switch (this) {
       case FadeType.fadeIn:

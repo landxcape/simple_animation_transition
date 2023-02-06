@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:simple_animation_transition/src/slide_animation/slide_direction_enum.dart';
+import 'package:simple_animation_transition/simple_animation_transition.dart';
 
 class SlideAnimatedWidget extends StatefulWidget {
+  /// Wrap widget to get a sliding effect.
+  /// [direction] by default is [SlideDirectionType.fromLeft] (as defined in [AnimationConstants]).
+  /// [duration] by default is 1 second.
+  /// [curve] by default is [Curves.fastOutSlowIn].
+  /// [heightFrom] to supply starting height
+  /// [widthFrom] to supply starting width
+  /// when [direction] is of type [SlideDirectionType.fromPosition], both [heightFrom] and [widthFrom] must be supplied
   const SlideAnimatedWidget({
     super.key,
-    this.direction = SlideDirectionType.fromLeft,
+    this.direction = AnimationConstants.defaultSlide,
     this.duration = const Duration(seconds: 1),
     this.curve = Curves.fastOutSlowIn,
     this.heightFrom,
@@ -40,8 +47,8 @@ class _SlideAnimatedWidgetState extends State<SlideAnimatedWidget> with TickerPr
     );
     _slideAnimation = Tween<Offset>(
       begin: widget.direction.getBegin(
-        widget.heightFrom ?? 20.0,
-        widget.widthFrom ?? 20.0,
+        widget.heightFrom ?? AnimationConstants.defaultSlideHeight,
+        widget.widthFrom ?? AnimationConstants.defaultSlideWidth,
       ),
       end: widget.direction.getEnd(),
     ).animate(
