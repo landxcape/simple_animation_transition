@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './slide_direction_enum.dart';
+import 'package:simple_animation_transition/src/slide_animation/slide_direction_enum.dart';
 
 class SlideAnimatedWidget extends StatefulWidget {
   const SlideAnimatedWidget({
@@ -7,18 +7,20 @@ class SlideAnimatedWidget extends StatefulWidget {
     this.direction = SlideDirectionType.fromLeft,
     this.duration = const Duration(seconds: 1),
     this.curve = Curves.fastOutSlowIn,
-    this.offset,
+    this.heightFrom,
+    this.widthFrom,
     required this.child,
   }) : assert(
-          direction != SlideDirectionType.fromOffset || (offset != null),
+          direction != SlideDirectionType.fromPosition || (heightFrom != null && widthFrom != null),
           "heightFrom and widthFrom should be not null when direction is $direction",
         );
 
   final SlideDirectionType direction;
   final Duration duration;
   final Curve curve;
-  final Offset? offset;
   final Widget child;
+  final double? heightFrom;
+  final double? widthFrom;
 
   @override
   State<SlideAnimatedWidget> createState() => _SlideAnimatedWidgetState();
@@ -37,7 +39,10 @@ class _SlideAnimatedWidgetState extends State<SlideAnimatedWidget> with TickerPr
       vsync: this,
     );
     _slideAnimation = Tween<Offset>(
-      begin: widget.direction.getBegin(widget.offset),
+      begin: widget.direction.getBegin(
+        widget.heightFrom ?? 20.0,
+        widget.widthFrom ?? 20.0,
+      ),
       end: widget.direction.getEnd(),
     ).animate(
       CurvedAnimation(
@@ -52,6 +57,7 @@ class _SlideAnimatedWidgetState extends State<SlideAnimatedWidget> with TickerPr
   @override
   void dispose() {
     _slideController.reverse();
+
     _slideController.dispose();
 
     super.dispose();
