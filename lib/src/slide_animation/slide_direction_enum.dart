@@ -5,10 +5,12 @@ enum SlideDirectionType {
   fromRight,
   fromTop,
   fromBottom,
+  /// slide start form supplied [heightFrom] and [widthFrom] in [getBegin]
   fromPosition,
 }
 
 extension DirectionTypeExtension on SlideDirectionType {
+  /// values for start of the tween
   Offset getBegin(double heightFrom, double widhtFrom) {
     switch (this) {
       case SlideDirectionType.fromLeft:
@@ -24,6 +26,7 @@ extension DirectionTypeExtension on SlideDirectionType {
     }
   }
 
+  /// values for end of the tween
   Offset getEnd() {
     switch (this) {
       case SlideDirectionType.fromLeft:
