@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.5
+
+Change slide animation widget's heightFrom and widthFrom to offset for the begin of the tween
+
 ## 0.0.4
 
 Add more dartdoc comments
