@@ -26,7 +26,8 @@ You can also play around with its parameters to change its duration, direction, 
 
 ## Getting started
 
-- Prerequisites: ^none
+- Prerequisites:
+  - Flutter: ^3.0
 
 - Start with adding to the pubsec.yaml
 
