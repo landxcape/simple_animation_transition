@@ -1,11 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:simple_animation_transition/simple_animation_transition.dart';
 
-import '../animation_constants.dart';
-import '../fade_animation/fade_animation_widget.dart';
-import '../fade_animation/fade_enum.dart';
-import '../slide_animation/slide_animated_widget.dart';
-import '../slide_animation/slide_direction_enum.dart';
 
 class FadedSlideAnimationWidget extends StatelessWidget {
   const FadedSlideAnimationWidget({
@@ -14,7 +10,8 @@ class FadedSlideAnimationWidget extends StatelessWidget {
     this.fadeType = AnimationConstants.defaultFade,
     this.direction = AnimationConstants.defaultSlide,
     this.curve = AnimationConstants.defaultCurve,
-    this.offset,
+    this.heightFrom,
+    this.widthFrom,
     this.fadeCurve,
     this.slideCurve,
     required this.child,
@@ -23,7 +20,8 @@ class FadedSlideAnimationWidget extends StatelessWidget {
   final Widget child;
   final Duration duration;
   final FadeType fadeType;
-  final Offset? offset;
+  final double? heightFrom;
+  final double? widthFrom;
   final SlideDirectionType direction;
   final Curve curve;
   final Curve? fadeCurve;
@@ -39,7 +37,8 @@ class FadedSlideAnimationWidget extends StatelessWidget {
         duration: duration,
         direction: direction,
         curve: slideCurve ?? curve,
-        offset: offset,
+        heightFrom: heightFrom,
+        widthFrom: widthFrom,
         child: child,
       ),
     );
