@@ -3,6 +3,7 @@ import 'package:simple_animation_transition/simple_animation_transition.dart';
 
 class ScaleAnimatedWidget extends StatefulWidget {
   /// Wrap widget to get a scaling effect.
+  ///
   /// [initialScaleRatio] is the initial size of the widget (pass value between 0 to 1).
   /// [endScaleRatio] is the end size of the widget (pass value between 0 to 1)
   /// Supplying [initialScaleRatio] and/or [endScaleRatio] will override [ScaleType]
