@@ -13,7 +13,7 @@ extension ScaleTypeExtension on ScaleType {
       case ScaleType.scaleIn:
         return 0.5;
       case ScaleType.scaleOut:
-        return 1.0;
+        return 1.5;
     }
   }
 
@@ -21,7 +21,6 @@ extension ScaleTypeExtension on ScaleType {
   double getEnd() {
     switch (this) {
       case ScaleType.scaleIn:
-        return 1.5;
       case ScaleType.scaleOut:
         return 1.0;
     }

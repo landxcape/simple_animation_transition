@@ -10,10 +10,11 @@ class FadedScaleAnimationWidget extends StatelessWidget {
     this.fadeType = AnimationConstants.defaultFade,
     this.scaleType = AnimationConstants.defaultScale,
     this.curve = AnimationConstants.defaultCurve,
-    this.initialScaleRatio = 0.4,
-    required this.child,
     this.fadeCurve,
     this.scaleCurve,
+    this.initialScaleRatio,
+    this.endScaleRatio,
+    required this.child,
   }) : super(key: key);
 
   final Widget child;
@@ -21,7 +22,8 @@ class FadedScaleAnimationWidget extends StatelessWidget {
   final FadeType fadeType;
   final ScaleType scaleType;
   final Curve curve;
-  final double initialScaleRatio;
+  final double? initialScaleRatio;
+  final double? endScaleRatio;
   final Curve? fadeCurve;
   final Curve? scaleCurve;
 
@@ -35,6 +37,7 @@ class FadedScaleAnimationWidget extends StatelessWidget {
         duration: duration,
         scaleType: scaleType,
         initialScaleRatio: initialScaleRatio,
+        endScaleRatio: endScaleRatio,
         curve: scaleCurve ?? curve,
         child: child,
       ),
