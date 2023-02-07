@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6
+
+Fixed scale animation stoping at 150% when [scale] was set to [scaleIn]
+
 ## 0.0.5
 
 Change slide animation widget's heightFrom and widthFrom to offset for the begin of the tween
